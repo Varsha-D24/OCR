@@ -1,0 +1,19 @@
+import pytesseract
+from PIL import Image
+
+def ocr(image_path):
+    # Open the image file using PIL
+    image = Image.open(image_path)
+    
+    # Apply OCR using pytesseract
+    text = pytesseract.image_to_string(image)
+    
+    # Print the extracted text
+    print(text)
+
+def main():
+    image_path = input("Enter the path to the image file: ")
+    ocr(image_path)
+
+if __name__ == "__main__":
+    main()
